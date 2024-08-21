@@ -9,5 +9,6 @@ public class IndividualAssignmentItSecurityApplication {
     public static void main(String[] args) {
         SpringApplication.run(IndividualAssignmentItSecurityApplication.class, args);
         System.out.println("Hello");
+        System.out.println("Hello2");
     }
 }
