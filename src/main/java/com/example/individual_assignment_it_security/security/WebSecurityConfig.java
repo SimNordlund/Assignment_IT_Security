@@ -48,18 +48,18 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
- /*   @Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/",  "/js/**", "/css/**", "/images/**", "/login/**", "/logout","/queues/**" ).permitAll()
                         .anyRequest().authenticated()
                 )
-                .oauth2Login(oauth2->{
+   /*             .oauth2Login(oauth2->{
                     oauth2.userInfoEndpoint(ep->{
                         ep.userAuthoritiesMapper( this.userAuthoritiesMapper() );
                     });
-                })
+                })*/
                 .formLogin((form) -> form
 //                        .loginPage("/login")
                                 .permitAll()
@@ -71,7 +71,7 @@ public class WebSecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
-    } */
+    }
 
     private GrantedAuthoritiesMapper userAuthoritiesMapper() {
 
