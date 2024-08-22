@@ -48,7 +48,7 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
-    @Bean
+ /*   @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
@@ -71,7 +71,7 @@ public class WebSecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
-    }
+    } */
 
     private GrantedAuthoritiesMapper userAuthoritiesMapper() {
 
