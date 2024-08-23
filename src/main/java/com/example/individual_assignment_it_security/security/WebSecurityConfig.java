@@ -55,11 +55,11 @@ public class WebSecurityConfig {
                         .requestMatchers("/",  "/js/**", "/css/**", "/images/**", "/login/**", "/logout","/queues/**" ).permitAll()
                         .anyRequest().authenticated()
                 )
-   /*             .oauth2Login(oauth2->{
+               .oauth2Login(oauth2->{
                     oauth2.userInfoEndpoint(ep->{
                         ep.userAuthoritiesMapper( this.userAuthoritiesMapper() );
                     });
-                })*/
+                })
                 .formLogin((form) -> form
 //                        .loginPage("/login")
                                 .permitAll()
@@ -94,7 +94,7 @@ public class WebSecurityConfig {
 
                     // Map the attributes found in userAttributes
                     // to one or more GrantedAuthority's and add it to mappedAuthorities
-                    if(login.equals("aspcodenet")){ //GLÖM EJ ÄNDRA DENNA!?!?
+                    if(login.equals("SimNordlund")){ //GLÖM EJ ÄNDRA DENNA!?!?
                         mappedAuthorities.add(new SimpleGrantedAuthority("Admin"));
                     }
                 }
