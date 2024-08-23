@@ -94,7 +94,7 @@ public class WebSecurityConfig {
 
                     // Map the attributes found in userAttributes
                     // to one or more GrantedAuthority's and add it to mappedAuthorities
-                    if(login.equals("SimNordlund")){ //GLÖM EJ ÄNDRA DENNA!?!?
+                    if(login.equals("SimNordlund")){ //GLÖM EJ ÄNDRA DENNA!?!? Hårkodad?
                         mappedAuthorities.add(new SimpleGrantedAuthority("Admin"));
                     }
                 }
