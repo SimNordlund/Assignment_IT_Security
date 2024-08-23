@@ -52,10 +52,11 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/",  "/js/**", "/css/**", "/images/**", "/login/**", "/logout","/queues/**" ).permitAll()
+                        .requestMatchers("/",  "/js/**", "/css/**", "/images/**", "/login/**", "/logout","/queues/**", "/landing" ).permitAll()
                         .anyRequest().authenticated()
                 )
                .oauth2Login(oauth2->{
+                   oauth2.defaultSuccessUrl("/landing", true);
                     oauth2.userInfoEndpoint(ep->{
                         ep.userAuthoritiesMapper( this.userAuthoritiesMapper() );
                     });
