@@ -26,14 +26,14 @@ public class IndividualAssignmentItSecurityApplication {
         else if (Objects.equals(args[0], "hashFile")) {
             SpringApplication application = new SpringApplication(HashFile.class);
             application.setWebApplicationType(WebApplicationType.NONE);
-            application.run (args);
+            application.run(args);
         }
     }
 
-    @Bean
+/*    @Bean
     CommandLineRunner commandLineRunner() {
         return args -> {
             userDataSeeder.Seed();
         };
-    }
+    } */
 }
