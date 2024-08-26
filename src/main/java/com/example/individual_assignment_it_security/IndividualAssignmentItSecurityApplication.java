@@ -13,11 +13,13 @@ public class IndividualAssignmentItSecurityApplication {
     @Autowired
     private UserDataSeeder userDataSeeder;
 
-
     public static void main(String[] args) {
-        SpringApplication.run(IndividualAssignmentItSecurityApplication.class, args);
-        System.out.println("Hello");
-        System.out.println("Hello2");
+
+        if (args.length == 0){
+            SpringApplication.run(IndividualAssignmentItSecurityApplication.class, args);
+            System.out.println("Hello");
+            System.out.println("Hello2");
+        }
     }
 
     @Bean
