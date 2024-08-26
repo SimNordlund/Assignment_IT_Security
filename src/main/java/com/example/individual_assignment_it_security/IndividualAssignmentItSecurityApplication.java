@@ -20,8 +20,7 @@ public class IndividualAssignmentItSecurityApplication {
 
         if (args.length == 0){
             SpringApplication.run(IndividualAssignmentItSecurityApplication.class, args);
-            System.out.println("Hello");
-            System.out.println("Hello2");
+            System.out.println("Hello, main is running");
         }
         else if (Objects.equals(args[0], "hashFile")) {
             SpringApplication application = new SpringApplication(HashFile.class);
