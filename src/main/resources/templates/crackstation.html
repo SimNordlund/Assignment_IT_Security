@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hash Password</title>
+</head>
+<body>
+
+<h1>Skriv in en icke saltad hash nedan:</h1>
+
+<div>
+    Behöver vara MD5 eller SHA256
+</div>
+
+<div>
+    <form action="crackHash" method="post">
+        <textarea id="hashToCrack" name="hashToCrack" style="width: 100%; height: 180px; border: solid black 1px;
+        background-color: #e9e9e9;">
+        </textarea>
+        <button type="submit">Knäck lösenordet!</button>
+    </form>
+</div>
+
+<br>
+<div>
+    <a href="/landing">Tillbaka</a>
+</div>
+<br>
+<div>
+    <a href="/logout">Logga ut</a>
+</div>
+
+</body>
+</html>

@@ -31,6 +31,4 @@ public class HashController {
 
         return "hashpasswordResult";
     }
-
-
 }
