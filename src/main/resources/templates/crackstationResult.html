@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crack Station Result</title>
+</head>
+<body>
+
+<h1>Lösenordet är följande:</h1>
+
+
+
+<h3>Nedan ser du MD5:</h3>
+<p th:text="${crackedPasswordMD5}"></p>
+
+<h3>Nedan ser du SHA256:</h3>
+<p th:text="${crackedPasswordSHA256}"></p>
+
+<br>
+<div>
+    <a href="/landing">Tillbaka</a>
+</div>
+<br>
+<div>
+    <a href="/logout">Logga ut</a>
+</div>
+
+</body>
+</html>
