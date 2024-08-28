@@ -1,15 +1,15 @@
-package com.example.individual_assignment_it_security.crack;
+package com.example.individual_assignment_it_security.crackUtilis;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class SHA256 {
-
-    public static String getSHA256(String input) {
+public class MD5 {
+    public static String getMD5(String input) {
         try {
+
             // Static getInstance method is called with hashing MD5
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md = MessageDigest.getInstance("MD5");
 
             // digest() method is called to calculate message digest
             // of an input digest() return array of byte

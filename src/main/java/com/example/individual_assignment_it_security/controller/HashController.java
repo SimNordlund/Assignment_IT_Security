@@ -1,7 +1,7 @@
 package com.example.individual_assignment_it_security.controller;
 
-import com.example.individual_assignment_it_security.crack.MD5;
-import com.example.individual_assignment_it_security.crack.SHA256;
+import com.example.individual_assignment_it_security.crackUtilis.MD5;
+import com.example.individual_assignment_it_security.crackUtilis.SHA256;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
