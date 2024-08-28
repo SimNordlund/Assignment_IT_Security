@@ -25,11 +25,11 @@ public class UserDataSeeder {
         if (roleRepository.findByName("Customer") == null) {
             addRole("Customer");
         }
-        if(userRepository.getUserByUsername("stefan.holmberg@systementor.se") == null){
-            addUser("stefan.holmberg@systementor.se","Admin");
+        if(userRepository.getUserByUsername("Simon") == null){
+            addUser("Simon","Admin");
         }
-        if(userRepository.getUserByUsername("oliver.holmberg@systementor.se") == null){
-            addUser("oliver.holmberg@systementor.se","Customer");
+        if(userRepository.getUserByUsername("Stefan") == null){
+            addUser("Stefan","Customer");
         }
     }
 
@@ -38,7 +38,7 @@ public class UserDataSeeder {
         roles.add(roleRepository.findByName(group));
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        String hash = encoder.encode("Hejsan123#");
+        String hash = encoder.encode("Hej123");
         User user = User.builder().enabled(true).password(hash).username(mail).roles(roles).build();
         userRepository.save(user);
     }

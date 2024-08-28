@@ -52,7 +52,8 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/",  "/js/**", "/css/**", "/images/**", "/login/**", "/logout","/queues/**", "/landing", "/hashFile/**").permitAll() // Add your specific URL pattern
+                        .requestMatchers("/",  "/js/**", "/css/**", "/images/**", "/login/**", "/logout", "/crackHash",
+                                "/queues/**", "/landing", "/hashFile/**", "/hash", "/crack","/createNewHash ").permitAll() // Add your specific URL pattern
                         .anyRequest().authenticated()
                 )
                 .oauth2Login(oauth2 -> {
@@ -61,8 +62,9 @@ public class WebSecurityConfig {
                         ep.userAuthoritiesMapper(this.userAuthoritiesMapper());
                     });
                 })
-                .formLogin((form) -> form
-                        .permitAll()
+                .formLogin((form) ->
+                        form.defaultSuccessUrl("/landing", true)
+                  //      .permitAll()
                 )
                 .logout((logout) -> {
                     logout.permitAll();
