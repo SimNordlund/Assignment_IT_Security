@@ -52,8 +52,8 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/",  "/js/**", "/css/**", "/images/**", "/login/**", "/logout", "/crackHash",
-                                "/queues/**", "/landing", "/hashFile/**", "/hash", "/crack","/createNewHash ").permitAll() // Add your specific URL pattern
+                        .requestMatchers("/", "/js/**", "/css/**", "/images/**", "/login/**", "/logout", "/crackHash",
+                                "/queues/**", "/landing", "/hashFile/**", "/hash", "/crack", "/createNewHash ").permitAll() // Add your specific URL pattern
                         .anyRequest().authenticated()
                 )
                 .oauth2Login(oauth2 -> {
@@ -63,8 +63,8 @@ public class WebSecurityConfig {
                     });
                 })
                 .formLogin((form) ->
-                        form.defaultSuccessUrl("/landing", true)
-                  //      .permitAll()
+                                form.defaultSuccessUrl("/landing", true)
+                        //      .permitAll()
                 )
                 .logout((logout) -> {
                     logout.permitAll();
@@ -85,23 +85,9 @@ public class WebSecurityConfig {
             authorities.forEach(authority -> {
 
                 if (authority instanceof OAuth2UserAuthority oauth2UserAuthority) {
-
-                    Map<String, Object> userAttributes = oauth2UserAuthority.getAttributes();
-
-
-                    //String email = userAttributes.get("email").toString();
-                    // email is not returned from Github!!! If not public email setting is turned on in your account
-
-                    // så - vi kan gå på login
-                    String login = userAttributes.get("login").toString();
-
-                    // Map the attributes found in userAttributes
-                    // to one or more GrantedAuthority's and add it to mappedAuthorities
-                    if(login.equals("SimNordlund")){ //GLÖM EJ ÄNDRA DENNA!?!? Hårkodad?
-                        mappedAuthorities.add(new SimpleGrantedAuthority("Admin"));
-                    }
+                    //ALla som använder github kan logga in och får rollen admin.
+                    mappedAuthorities.add(new SimpleGrantedAuthority("Admin"));
                 }
-
             });
 
             return mappedAuthorities;
