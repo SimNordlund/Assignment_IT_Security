@@ -19,14 +19,14 @@ public class CrackStationController {
 
     private final CrackStationServiceImpl crackStationServiceImpl;
 
-    public CrackStationController (CrackStationServiceImpl crackStationServiceImpl) {
+    public CrackStationController(CrackStationServiceImpl crackStationServiceImpl) {
         this.crackStationServiceImpl = crackStationServiceImpl;
     }
 
 
     @GetMapping("/crack")
     public String crackStationPage(@AuthenticationPrincipal OAuth2User oAuth2User,
-                               Model model) {
+                                   Model model) {
         return "crackstation";
     }
 

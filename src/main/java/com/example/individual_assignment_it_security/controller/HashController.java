@@ -22,7 +22,7 @@ public class HashController {
     }
 
     @PostMapping("/createNewHash")
-    public String createNewHash(@RequestParam String password, Model model){
+    public String createNewHash(@RequestParam String password, Model model) {
         String hashedPasswordMD5 = MD5.getMD5(password);
         String hashedPasswordSHA256 = SHA256.getSHA256(password);
 

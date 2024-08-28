@@ -3,7 +3,6 @@ package com.example.individual_assignment_it_security.service;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class CrackStationServiceImpl {
                 return password;
             }
         }
-        return "Not found";
+        return "Fanns inte!";
     }
 
     public String crackSHA256(String hashToCrack) {
@@ -61,6 +60,6 @@ public class CrackStationServiceImpl {
                 return password;
             }
         }
-        return "Not found";
+        return "Fanns inte!";
     }
 }
