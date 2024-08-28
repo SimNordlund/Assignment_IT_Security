@@ -84,7 +84,12 @@ public class WebSecurityConfig {
 
             authorities.forEach(authority -> {
 
+
                 if (authority instanceof OAuth2UserAuthority oauth2UserAuthority) {
+                    Map<String, Object> userAttributes = oauth2UserAuthority.getAttributes();
+                    String login = userAttributes.get("login").toString();
+                    System.out.println(login + " Loggade in!");
+
                     //ALla som använder github kan logga in och får rollen admin.
                     mappedAuthorities.add(new SimpleGrantedAuthority("Admin"));
                 }
