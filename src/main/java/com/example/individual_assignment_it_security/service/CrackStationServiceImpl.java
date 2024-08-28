@@ -1,5 +1,6 @@
 package com.example.individual_assignment_it_security.service;
 
+import com.example.individual_assignment_it_security.service.interfaces.CrackStationService;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -9,8 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CrackStationServiceImpl {
+public class CrackStationServiceImpl implements CrackStationService {
 
+    @Override
     public String crackMD5(String hashToCrack) {
         String tempLine;
         List<String> passwordList = new ArrayList<>();
@@ -37,6 +39,7 @@ public class CrackStationServiceImpl {
         return "Fanns inte!";
     }
 
+    @Override
     public String crackSHA256(String hashToCrack) {
         String tempLine;
         List<String> passwordList = new ArrayList<>();
