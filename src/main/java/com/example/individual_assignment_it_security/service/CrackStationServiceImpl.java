@@ -14,38 +14,25 @@ public class CrackStationServiceImpl implements CrackStationService {
 
     @Override
     public String crackMD5(String hashToCrack) {
-        String tempLine;
-        List<String> passwordList = new ArrayList<>();
-
-        try (BufferedReader reader = new BufferedReader
-                (new FileReader("src/main/java/com/example/individual_assignment_it_security/files/HashesMD5.txt"))) {
-
-            while ((tempLine = reader.readLine()) != null) {
-                passwordList.add(tempLine);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        for (String line : passwordList) {
-            int index = line.indexOf(':');
-            String password = line.substring(0, index);
-            String hash = line.substring(index + 1);
-
-            if (hashToCrack.equals(hash)) {
-                return password;
-            }
-        }
-        return "Fanns inte!";
+        String pathMD5 = "src/main/java/com/example/individual_assignment_it_security/files/HashesMD5.txt";
+        return findMatch(hashToCrack, pathMD5);
     }
 
     @Override
     public String crackSHA256(String hashToCrack) {
+        String pathSHA256 = "src/main/java/com/example/individual_assignment_it_security/files/HashesSHA256.txt";
+
+        return findMatch(hashToCrack, pathSHA256);
+    }
+
+    @Override
+    public String findMatch (String hashToCrack, String pathOfFile){
+
         String tempLine;
         List<String> passwordList = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader
-                (new FileReader("src/main/java/com/example/individual_assignment_it_security/files/HashesSHA256.txt"))) {
+                (new FileReader(pathOfFile))) {
 
             while ((tempLine = reader.readLine()) != null) {
                 passwordList.add(tempLine);
@@ -64,5 +51,6 @@ public class CrackStationServiceImpl implements CrackStationService {
             }
         }
         return "Fanns inte!";
+
     }
 }

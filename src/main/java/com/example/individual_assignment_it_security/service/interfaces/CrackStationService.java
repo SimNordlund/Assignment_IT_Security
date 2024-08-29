@@ -4,5 +4,6 @@ public interface CrackStationService {
 
     String crackMD5 (String hashToCrack);
     String crackSHA256 (String hashToCrack);
+    String findMatch (String hashToCrack, String pathOfFile);
 
 }
