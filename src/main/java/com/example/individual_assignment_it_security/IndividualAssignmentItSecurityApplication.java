@@ -29,10 +29,10 @@ public class IndividualAssignmentItSecurityApplication {
         }
     }
 
- /*   @Bean
+    @Bean
     CommandLineRunner commandLineRunner() {
         return args -> {
             userDataSeeder.Seed();
         };
-    } */
+    }
 }
